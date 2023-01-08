@@ -43,4 +43,4 @@ After the tasks have been put into the database, four functions are used to filt
 The delete and completed fucntions are implemented such that they take and integer after the path, once the user clicks on the respective icon the task id is passed with the request. The database if then queried for that task id, if it is delete the task is deleted from the database else the status is updated to 'Completed'
 
 #### 3. History
-This page dispalys all the task whose status is set to 'Completed'. It helps the user refer abck to it.#
+This page dispalys all the task whose status is set to 'Completed'. It helps the user refer abck to it.
