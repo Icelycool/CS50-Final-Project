@@ -1,0 +1,32 @@
+{% extends "dashboard.html" %}
+
+{% block title %}
+Deligate
+{% endblock %}
+
+{% block main %}
+<h1>Deligate</h1>
+<hr>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <th>Date Added</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Status</th>
+        </thead>
+        <tbody>
+            {% for deligate in deligates %}
+            <tr>
+                <td>{{ deligate["date_added"] }}</td>
+                <td>{{ deligate["title"] }}</td>
+                <td>{{ deligate["description"] }}</td>
+                <td>{{ deligate["due_date"] }}</td>
+                <td><a href="/completed/{{deligate.id}}" name="Completed"><i class="fs-4 bi bi-check-circle" style="color:green"></i></a></td>
+                <td><a href="/delete/{{deligate.id}}" name="Deleted"><i class="fs-4 bi bi-x-circle" style="color:red"></i></a></td>
+            </tr>
+            {% endfor %}
+    </table>
+</div>
+{% endblock %}

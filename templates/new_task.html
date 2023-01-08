@@ -1,0 +1,44 @@
+{% extends "dashboard.html" %}
+
+{% block title %}
+New Task
+{% endblock %}
+
+{% block main %}
+<h1>New Task</h1>
+<hr>
+<form action="/tasks" method="post">
+    <div class="mb-3">
+        <label for="title" class="form-label"><strong>Task Title</strong></label>
+        <input type="text" class="form-control" id="title" name="title" placeholder="Task Title">
+    </div>
+    <div class="mb-3">
+        <label for="description" class="form-label"><strong>Description</strong></label>
+        <textarea class="form-control" placeholder="Description" id="description" name="description" style="height: 100px"></textarea>
+    </div>
+
+    <div class="row g-3 align-items-center">
+    <div class="col-auto col-3">
+        <div class="mb-3">
+            <label for="due"><strong>Due</strong></label>
+            <input type="date" class="form-control" id="due" name="due">
+        </div>
+    </div>
+    <div class="col-auto col-3">
+        <div class="mb-3">
+
+        <label for="category"><strong>Category</strong></label>
+        <select id="category" class="form-control" name="category">
+        <option selected>Category</option>
+        <option>To Do</option>
+        <option>Schedule</option>
+        <option>Deligate</option>
+        <option>Eliminate</option>
+        </select>
+        </div>
+    </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Add Task</button>
+
+</form>
+{% endblock %}

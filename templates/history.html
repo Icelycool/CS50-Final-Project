@@ -1,0 +1,32 @@
+{% extends "dashboard.html" %}
+
+{% block title %}
+History
+{% endblock %}
+
+{% block main %}
+<h1>History</h1>
+<hr>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <th>Date Added</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Category</th>
+            <th>Status</th>
+        </thead>
+        <tbody>
+            {% for record in records %}
+            <tr>
+                <td>{{ record["date_added"] }}</td>
+                <td>{{ record["title"] }}</td>
+                <td>{{ record["description"] }}</td>
+                <td>{{ record["category"] }}</td>
+                <td> <button type="button" class="btn btn-success btn-sm">{{ record["status"] }}</button></td>
+
+            </tr>
+            {% endfor %}
+    </table>
+</div>
+{% endblock %}

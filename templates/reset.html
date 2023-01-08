@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Reset Password
+{% endblock %}
+
+{% block main %}
+<div class="user container p-2 m-2" align="center">
+<div class="card" style="width: 20rem;">
+<div class="card" >
+<div class="card-header">
+    <h1 align="center" class="mb-3">Rest Password</h1>
+</div>
+<div class="card-body">
+    <p>Please put your email below to receive a password reset link in your email.</p>
+<form method="post" action="/reset">
+<div class="mb-3">
+    <input type="email" id="email" name="email" class="form-control mx-auto w-auto" placeholder="Email">
+</div>
+<button class="btn btn-primary" type="submit">Reset Password</button>
+</form>
+</div>
+</div>
+</div>
+{% endblock %}
+

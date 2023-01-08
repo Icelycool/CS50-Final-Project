@@ -1,0 +1,33 @@
+{% extends "dashboard.html" %}
+
+{% block title %}
+Eliminate
+{% endblock %}
+
+{% block main %}
+<h1>Eliminate</h1>
+<hr>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <th>Date Added</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th>Status</th>
+        </thead>
+        <tbody>
+            {% for eliminate in eliminates %}
+            <tr>
+                <td>{{ eliminate["date_added"] }}</td>
+                <td>{{ eliminate["title"] }}</td>
+                <td>{{ eliminate["description"] }}</td>
+                <td>{{ eliminate["due_date"] }}</td>
+                <td><a href="/completed/{{eliminate.id}}" name="Completed"><i class="fs-4 bi bi-check-circle" style="color:green"></i></a></td>
+                <td><a href="/delete/{{eliminate.id}}" name="Deleted"><i class="fs-4 bi bi-x-circle" style="color:red"></i></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "dashboard.html" %}
+{% block title %}
+To Do
+{% endblock %}
+{% block main %}
+<h1>To Do</h1>
+<hr>
+<div>
+    <table class="table table-striped">
+        <thead>
+            <th>Date Added</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Due Date</th>
+            <th></th>
+            <th></th>
+        </thead>
+        <tbody>
+            {% for todo in todos %}
+            <tr>
+                <td>{{ todo["date_added"] }}</td>
+                <td>{{ todo["title"] }}</td>
+                <td>{{ todo["description"] }}</td>
+                <td>{{ todo["due_date"] }}</td>
+                <td><a href="/completed/{{todo.id}}" name="Completed"><i class="fs-4 bi bi-check-circle" style="color:green"></i></a></td>
+                <td><a href="/delete/{{todo.id}}"><i class="fs-4 bi bi-x-circle" style="color:red"></i></a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
